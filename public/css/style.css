@@ -1,0 +1,257 @@
+
+.sidebar {
+    width: 60px;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    height: 100vh;    
+}
+
+.sidebar.expanded {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+}
+
+
+.sidebar.expanded .nav-link:hover {
+    background-color: #ffd4cb;
+    color: white;
+}
+
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    white-space: nowrap;
+}
+
+.sidebar .nav-link i {
+    font-size: 1.25rem;
+    margin-right: 15px;
+    margin-left: 6px;
+}
+
+.sidebar.collapsed .label {
+    display: none;
+}
+
+.sidebar .nav-section-title {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.disabled-link {
+    pointer-events: none;
+    background-color: transparent !important;
+    color: #adb5bd !important;
+}
+
+.disabled-link:hover {
+    background-color: transparent !important;
+    color: #adb5bd !important;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+.black-text {
+            font-weight: 900 /* Bold */
+        }
+
+table th,
+table td {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Ngehapus stroke */
+.pagination .page-link {
+    border: none;
+}
+
+/* klo kepilih dia jadi warna merah */
+.pagination .active .page-link {
+    background-color: #ff0000;
+    /* Ini bgnya */
+    color: white;
+    /* text nya warna putih */
+}
+
+/* Hover jadi warna putih tulang */
+.pagination .page-link:hover {
+    background-color: #f2f2f2;
+}
+
+/* ini kalo udah mentok dia gaada next, dia akan jadi warna abu */
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+}
+
+.search-input {
+    position: relative;
+    max-width: 200px;
+}
+
+.search-input i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.search-input input {
+    padding-left: 30px;
+    /* Memberikan ruang untuk ikon */
+}
+
+h2{
+    font-size: 6rem;
+    color: #ffffff;
+    background:
+    url('images/bg.png') center;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    animation: animate 10s linear infinite;
+    white-space: nowrap; 
+    overflow: hidden; 
+    animation: typing 5s steps(50) infinite; 
+    width: 20ch; 
+}
+
+@keyframes animate{
+    to{
+        background-position-x: -200px;
+    }
+}
+@keyframes typing {
+    from {
+        width: 0ch; 
+    }
+}
+/* Custom styles for ID PROJECT */
+
+
+/* Adjust top bar alignment */
+.top-bar .container {
+    justify-content: flex-start;
+}
+
+/* Adjust logo position */
+.navbar-start {
+    padding-left: 0;
+}
+
+@media (min-width: 768px) {
+    .top-bar .container > div:first-child {
+        margin-left: 0;
+    }
+}
+
+.nav-menu {
+    background-color: white;
+}
+
+/* Hero section styles */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Service card styles */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    height: 60px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Project menu styles */
+.project-menu-item {
+    position: relative;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.project-menu-item.active {
+    color: #ff0000;
+    font-weight: 600;
+}
+
+.project-menu-item.active::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #ff0000;
+}
+
+.project-menu-item:hover {
+    color: #ff0000;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2d3748;
+}
+
+footer .social-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+footer .social-icon:hover {
+    transform: translateY(-3px);
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+    }
+
+    footer {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    footer .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+
