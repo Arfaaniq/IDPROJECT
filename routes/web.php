@@ -110,3 +110,5 @@ Route::get('/admin/events/{event}/edit', [EventController::class, 'edit'])->name
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/admin-auth.php';
+
+// testoijg
