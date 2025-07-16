@@ -1,14 +1,20 @@
 @extends('customers.layouts.app')
 @section('title', 'Status Pesanan & Invoice')
 @section('content')
-<div class="hero-section-100 py-20 hero-with-bg">
+<div
+    class="hero-section-100 py-20"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{
+        asset('assets/wallpaperflare-cropped2.jpg')
+    }}');"
+>
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4 text-white">Status ID PROJECT</h1>
+            <h1 class="text-4xl font-bold mb-4 text-white">About ID PROJECT</h1>
             <div class="w-24 h-1 bg-project-red mx-auto mb-8"></div>
             <p class="text-lg text-white">
-                    Learn more about our company, our mission, and our dedicated team of professionals.
-                </p>
+                Learn more about our company, our mission, and our dedicated
+                team of professionals.
+            </p>
         </div>
     </div>
 </div>

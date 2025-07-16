@@ -75,14 +75,30 @@ Route::middleware('auth:web')->group(function () {
     Route::post('/orderservice', [VerifyController::class, 'order'])->name('orderservice');
 });
 
-//Riwayat
+//mail
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
-
+//Embed IG
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/instagram', [InstagramEmbedController::class, 'index'])->name('instagram.index');
+    Route::post('/instagram', [InstagramEmbedController::class, 'store'])->name('instagram.store');
+    Route::get('/instagram/{embed}/edit', [InstagramEmbedController::class, 'edit']) ->name('instagram.edit');
+    Route::put('/instagram/{embed}', [InstagramEmbedController::class, 'update'])->name('instagram.update');
+    Route::delete('/instagram/{embed}', [InstagramEmbedController::class, 'destroy'])->name('instagram.destroy');
+});
 
 // Setelah login akan masuk ke halaman verifikasi
 
 // Halaman welcome setelah login
 Route::get('/orderservice', [AuthController::class, 'welcome'])->name('orderservice')->middleware('auth');
+
+// bahasa
+Route::get('/lang/{locale}', function ($locale) {
+    if (! in_array($locale, ['id', 'en'])) abort(400);
+    session(['locale' => $locale]);
+    return redirect()->back();
+})->name('change.language');
+
 
 
 //Customer status

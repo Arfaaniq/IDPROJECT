@@ -1,18 +1,21 @@
-@extends('customers.layouts.app') @section('title', 'About Us - ID PROJECT')
+@extends('customers.layouts.app')
+@section('title', 'About Us - ID PROJECT')
 @section('content')
-<!-- Hero Section for About Page -->
-<div class="hero-section-100 py-20 hero-with-bg">
+<div
+    class="hero-section-100 py-20"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ asset('assets/wallpaperflare-cropped2.jpg') }}');"
+>
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4 text-white">About ID PROJECT</h1>
+            <h1 class="text-4xl font-bold mb-4 text-white">{!! __('about.hero_title') !!}</h1>
             <div class="w-24 h-1 bg-project-red mx-auto mb-8"></div>
             <p class="text-lg text-white">
-                    Learn more about our company, our mission, and our dedicated team of professionals.
-                </p>
+                {{ __('about.hero_tagline') }}
+            </p>
         </div>
     </div>
 </div>
-<!-- About Content Section -->
+
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-8">
@@ -23,97 +26,74 @@
                     class="rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none shadow-lg w-full" />
             </div>
             <div class="w-full md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+                <h2 class="text-3xl font-bold mb-4">{{ __('about.our_story_heading') }}</h2>
                 <p class="text-gray-700 mb-4">
-                    Perusahaan kami didirikan pada tahun 2020 dan telah
-                    mendedikasikan diri dalam industri konstruksi dengan fokus
-                    khusus pada renovasi. Seiring berjalannya waktu, kami terus
-                    berupaya untuk melakukan inovasi yang berkelanjutan.
+                    {{ __('about.our_story_paragraph1') }}
                 </p>
                 <p class="text-gray-700 mb-4">
-                    Sehingga saat ini kami memiliki sumber daya yang handal
-                    diberbagai bidang sehingga dapat menyajikan beragam produk
-                    dan layanan dalam kerangka
-                    <span class="font-semibold">One Stop Service</span>.
+                    {!! __('about.our_story_paragraph2') !!}
                 </p>
                 <p class="text-gray-700">
-                    Portofolio layanan kami mencakup Desain, Pembangunan,
-                    Renovasi, Desain Interior, Lansekap, Pemeliharaan, Layanan
-                    Teknik Sipil dan Layanan Listrik.
+                    {!! __('about.our_story_paragraph3') !!}
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Our Values Section -->
 <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Our Values</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">{{ __('about.our_values_heading') }}</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Value 1 -->
             <div class="bg-white p-8 rounded-lg shadow-md text-center">
                 <div
                     class="bg-project-red text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <i class="fas fa-medal text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Quality</h3>
+                <h3 class="text-xl font-bold mb-3">{{ __('about.quality_heading') }}</h3>
                 <p class="text-gray-700">
-                    We are committed to delivering the highest quality in every
-                    project we undertake, ensuring customer satisfaction and
-                    exceeding expectations.
+                    {{ __('about.quality_description') }}
                 </p>
             </div>
 
-            <!-- Value 2 -->
             <div class="bg-white p-8 rounded-lg shadow-md text-center">
                 <div
                     class="bg-project-red text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <i class="fas fa-handshake text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Integrity</h3>
+                <h3 class="text-xl font-bold mb-3">{{ __('about.integrity_heading') }}</h3>
                 <p class="text-gray-700">
-                    We operate with honesty, transparency, and ethical standards
-                    in all our business dealings and relationships with clients
-                    and partners.
+                    {{ __('about.integrity_description') }}
                 </p>
             </div>
 
-            <!-- Value 3 -->
             <div class="bg-white p-8 rounded-lg shadow-md text-center">
                 <div
                     class="bg-project-red text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <i class="fas fa-lightbulb text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Innovation</h3>
+                <h3 class="text-xl font-bold mb-3">{{ __('about.innovation_heading') }}</h3>
                 <p class="text-gray-700">
-                    We continuously seek innovative solutions and embrace new
-                    technologies to improve our services and deliver
-                    cutting-edge designs.
+                    {{ __('about.innovation_description') }}
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Vision and Mission Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <!-- Vision -->
         <div class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">Visi Kami</h2>
-            <p class="text-gray-700 text-lg">
-                I.d. Project sebagai perusahaan yang sukses, berdaya saing
-                tinggi dan tumbuh berkelanjutan
+            <h2 class="text-3xl font-bold mb-6">{{ __('about.our_vision_heading') }}</h2>
+            <p class="text-gray-700 text-lg" style="color: #e74c3c; font-size: 3.5rem; font-weight: normal; line-height: 1.2;">
+                {{ __('about.our_vision_text') }}
             </p>
         </div>
 
-        <!-- Mission -->
         <div class="mb-16">
-            <h2 class="text-3xl font-bold mb-10">Misi Kami</h2>
+            <h2 class="text-3xl font-bold mb-10">{{ __('about.our_mission_heading') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Mission 1 -->
                 <div class="flex flex-col">
                     <div class="relative mb-4">
                         <div
@@ -123,15 +103,12 @@
                         <div
                             class="bg-gray-800 bg-opacity-70 p-6 pt-10 -mt-8 rounded-lg">
                             <p class="text-white">
-                                Berkomitmen untuk kepuasan pelanggan dengan
-                                menghasilkan karya yang berkualitas serta
-                                memberikan pelayanan yang terbaik.
+                                {{ __('about.mission1_description') }}
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Mission 2 -->
                 <div class="flex flex-col">
                     <div class="relative mb-4">
                         <div
@@ -141,14 +118,12 @@
                         <div
                             class="bg-gray-800 bg-opacity-70 p-6 pt-10 -mt-8 rounded-lg">
                             <p class="text-white">
-                                Mampu beradaptasi dalam keadaan yang berubah dan
-                                berorientasi ke depan.
+                                {{ __('about.mission2_description') }}
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Mission 3 -->
                 <div class="flex flex-col">
                     <div class="relative mb-4">
                         <div
@@ -158,9 +133,7 @@
                         <div
                             class="bg-gray-800 bg-opacity-70 p-6 pt-10 -mt-8 rounded-lg">
                             <p class="text-white">
-                                Perusahaan yang karyawannya dapat tumbuh dan
-                                memiliki kinerja yang baik dan secara terus
-                                menerus berupaya untuk mencapai kesuksesan.
+                                {{ __('about.mission3_description') }}
                             </p>
                         </div>
                     </div>
@@ -168,10 +141,9 @@
             </div>
         </div>
 
-        <!-- 6 Reasons -->
         <div>
             <h2 class="text-3xl font-bold text-center mb-6">
-                6 Alasan Kenapa Harus Memilih Kami Jadi Partner Anda!
+                {{ __('about.reasons_heading') }}
             </h2>
             <div class="flex justify-center mb-8">
                 <div class="w-40 h-2 bg-gray-200 rounded-full relative">
@@ -180,12 +152,10 @@
                 </div>
             </div>
             <p class="text-center text-gray-700 mb-10">
-                Membangun tempat tinggal impian jangan asal pilih partner. |
-                Membangun tempat tinggal impian jangan asal pilih partner.
+                {{ __('about.reasons_tagline') }}
             </p>
 
             <div class="max-w-4xl mx-auto">
-                <!-- Reason 1 -->
                 <div
                     class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
                     <div
@@ -197,7 +167,7 @@
                                     class="fas fa-hand-holding-heart text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-project-red">
-                                Free Survey
+                                {{ __('about.free_survey_heading') }}
                             </h3>
                         </div>
                         <div class="text-project-red">
@@ -210,14 +180,11 @@
                         class="bg-project-red text-white p-6 hidden"
                         id="reason1-content">
                         <p>
-                            Kami menyediakan layanan survei gratis untuk
-                            membantu Anda memahami kebutuhan Anda tanpa biaya
-                            tambahan.
+                            {{ __('about.free_survey_description') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Reason 2 -->
                 <div
                     class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
                     <div
@@ -228,7 +195,7 @@
                                 <i class="fas fa-comments text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-project-red">
-                                Free Konsultasi
+                                {{ __('about.free_consultation_heading_2') }}
                             </h3>
                         </div>
                         <div class="text-project-red">
@@ -241,13 +208,11 @@
                         class="bg-project-red text-white p-6 hidden"
                         id="reason2-content">
                         <p>
-                            Kami menawarkan konsultasi gratis untuk membantu
-                            Anda merencanakan proyek impian Anda dengan tepat.
+                            {{ __('about.free_consultation_description_2') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Reason 3 -->
                 <div
                     class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
                     <div
@@ -258,7 +223,7 @@
                                 <i class="fas fa-heart text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-project-red">
-                                Serve With Love
+                                {{ __('about.serve_with_love_heading') }}
                             </h3>
                         </div>
                         <div class="text-project-red">
@@ -271,13 +236,11 @@
                         class="bg-project-red text-white p-6 hidden"
                         id="reason3-content">
                         <p>
-                            Kami melayani dengan sepenuh hati dan dedikasi untuk
-                            memastikan kepuasan Anda.
+                            {{ __('about.serve_with_love_description') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Reason 4 -->
                 <div
                     class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
                     <div
@@ -288,7 +251,7 @@
                                 <i class="fas fa-user-check text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-project-red">
-                                Operator Certified
+                                {{ __('about.operator_certified_heading_2') }}
                             </h3>
                         </div>
                         <div class="text-project-red">
@@ -301,13 +264,11 @@
                         class="bg-project-red text-white p-6 hidden"
                         id="reason4-content">
                         <p>
-                            Tim kami terdiri dari operator bersertifikat yang
-                            terlatih dan profesional.
+                            {{ __('about.operator_certified_description_2') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Reason 5 -->
                 <div
                     class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
                     <div
@@ -318,7 +279,7 @@
                                 <i class="fas fa-headset text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-project-red">
-                                After Sales Service
+                                {{ __('about.after_sales_service_heading') }}
                             </h3>
                         </div>
                         <div class="text-project-red">
@@ -331,13 +292,11 @@
                         class="bg-project-red text-white p-6 hidden"
                         id="reason5-content">
                         <p>
-                            Kami menyediakan layanan purna jual untuk memastikan
-                            kepuasan jangka panjang Anda.
+                            {{ __('about.after_sales_service_description') }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Reason 6 -->
                 <div
                     class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
                     <div
@@ -348,7 +307,7 @@
                                 <i class="fas fa-shield-alt text-2xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-project-red">
-                                Warranty
+                                {{ __('about.warranty_heading') }}
                             </h3>
                         </div>
                         <div class="text-project-red">
@@ -361,8 +320,7 @@
                         class="bg-project-red text-white p-6 hidden"
                         id="reason6-content">
                         <p>
-                            Kami memberikan garansi untuk setiap pekerjaan yang
-                            kami lakukan.
+                            {{ __('about.warranty_description') }}
                         </p>
                     </div>
                 </div>
@@ -388,10 +346,9 @@
     </script>
 </section>
 
-<!-- Team Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-2">Our Team</h2>
+        <h2 class="text-3xl font-bold text-center mb-2">{{ __('about.our_team_heading') }}</h2>
         <div class="flex justify-center mb-16">
             <div class="w-40 h-2 bg-gray-200 rounded-full relative">
                 <div
@@ -400,7 +357,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Team Member 1 -->
             <div class="text-center">
                 <div
                     class="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden">
@@ -409,11 +365,10 @@
                         alt="Team Member"
                         class="w-full h-full object-cover" />
                 </div>
-                <h3 class="text-xl font-bold">John Doe</h3>
-                <p class="text-project-red font-medium">CEO & Founder</p>
+                <h3 class="text-xl font-bold">{{ __('about.john_doe_name') }}</h3>
+                <p class="text-project-red font-medium">{{ __('about.john_doe_title') }}</p>
                 <p class="text-gray-700 mt-2">
-                    With over 15 years of experience in construction and design,
-                    John leads our team with vision and expertise.
+                    {{ __('about.john_doe_description') }}
                 </p>
                 <div class="flex justify-center mt-4 space-x-3">
                     <a href="#" class="text-gray-600 hover:text-project-red"><i class="fab fa-linkedin"></i></a>
@@ -422,7 +377,6 @@
                 </div>
             </div>
 
-            <!-- Team Member 2 -->
             <div class="text-center">
                 <div
                     class="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden">
@@ -431,11 +385,10 @@
                         alt="Team Member"
                         class="w-full h-full object-cover" />
                 </div>
-                <h3 class="text-xl font-bold">Jane Smith</h3>
-                <p class="text-project-red font-medium">Lead Designer</p>
+                <h3 class="text-xl font-bold">{{ __('about.jane_smith_name') }}</h3>
+                <p class="text-project-red font-medium">{{ __('about.jane_smith_title') }}</p>
                 <p class="text-gray-700 mt-2">
-                    Jane brings creativity and technical expertise to every
-                    project, ensuring beautiful and functional designs.
+                    {{ __('about.jane_smith_description') }}
                 </p>
                 <div class="flex justify-center mt-4 space-x-3">
                     <a href="#" class="text-gray-600 hover:text-project-red"><i class="fab fa-linkedin"></i></a>
@@ -444,7 +397,6 @@
                 </div>
             </div>
 
-            <!-- Team Member 3 -->
             <div class="text-center">
                 <div
                     class="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden">
@@ -453,11 +405,10 @@
                         alt="Team Member"
                         class="w-full h-full object-cover" />
                 </div>
-                <h3 class="text-xl font-bold">Jane Smith</h3>
-                <p class="text-project-red font-medium">Lead Designer</p>
+                <h3 class="text-xl font-bold">{{ __('about.john_doe_name') }}</h3> {{-- Assuming placeholder for another male --}}
+                <p class="text-project-red font-medium">{{ __('about.john_doe_title') }}</p>
                 <p class="text-gray-700 mt-2">
-                    Jane brings creativity and technical expertise to every
-                    project, ensuring beautiful and functional designs.
+                    {{ __('about.john_doe_description') }}
                 </p>
                 <div class="flex justify-center mt-4 space-x-3">
                     <a href="#" class="text-gray-600 hover:text-project-red"><i class="fab fa-linkedin"></i></a>
@@ -466,7 +417,6 @@
                 </div>
             </div>
 
-            <!-- Team Member 4 -->
             <div class="text-center">
                 <div
                     class="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden">
@@ -475,11 +425,10 @@
                         alt="Team Member"
                         class="w-full h-full object-cover" />
                 </div>
-                <h3 class="text-xl font-bold">Michael Johnson</h3>
-                <p class="text-project-red font-medium">Project Manager</p>
+                <h3 class="text-xl font-bold">{{ __('about.michael_johnson_name') }}</h3>
+                <p class="text-project-red font-medium">{{ __('about.michael_johnson_title') }}</p>
                 <p class="text-gray-700 mt-2">
-                    Michael ensures that all projects are completed on time,
-                    within budget, and to the highest standards.
+                    {{ __('about.michael_johnson_description') }}
                 </p>
                 <div class="flex justify-center mt-4 space-x-3">
                     <a href="#" class="text-gray-600 hover:text-project-red"><i class="fab fa-linkedin"></i></a>
@@ -491,10 +440,9 @@
     </div>
 </section>
 
-<!-- Jangkauan Kami Section -->
 <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4">Jangkauan Kami</h2>
+        <h2 class="text-3xl font-bold text-center mb-4">{{ __('about.our_coverage_heading') }}</h2>
         <div class="flex justify-center mb-8">
             <div class="w-40 h-2 bg-gray-200 rounded-full relative">
                 <div
@@ -502,7 +450,7 @@
             </div>
         </div>
         <p class="text-center text-gray-700 mb-12">
-            Daerah yang sudah terjangkau I.d. Project
+            {{ __('about.our_coverage_tagline') }}
         </p>
 
         <div class="flex flex-col md:flex-row items-center gap-12">
@@ -516,18 +464,18 @@
             <div class="w-full md:w-2/5">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-bold mb-4">
-                        Nama-nama kota yang sudah terjangkau I.d. Project:
+                        {{ __('about.cities_heading') }}
                     </h3>
                     <ol class="list-decimal pl-5 space-y-2">
-                        <li>Batam</li>
-                        <li>Pekanbaru</li>
-                        <li>Jakarta</li>
-                        <li>Yogyakarta</li>
-                        <li>Surabaya</li>
-                        <li>Bali</li>
-                        <li>Kalimantan</li>
-                        <li>Makassar</li>
-                        <li>Papua</li>
+                        <li>{{ __('about.city_batam') }}</li>
+                        <li>{{ __('about.city_pekanbaru') }}</li>
+                        <li>{{ __('about.city_jakarta') }}</li>
+                        <li>{{ __('about.city_yogyakarta') }}</li>
+                        <li>{{ __('about.city_surabaya') }}</li>
+                        <li>{{ __('about.city_bali') }}</li>
+                        <li>{{ __('about.city_kalimantan') }}</li>
+                        <li>{{ __('about.city_makassar') }}</li>
+                        <li>{{ __('about.city_papua') }}</li>
                     </ol>
                 </div>
             </div>
@@ -535,11 +483,10 @@
     </div>
 </section>
 
-<!-- Partner Kami Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4 text-project-red">
-            Partner Kami
+            {{ __('about.our_partners_heading') }}
         </h2>
         <div class="flex justify-center mb-12">
             <div class="w-40 h-2 bg-gray-200 rounded-full relative">
@@ -549,7 +496,6 @@
         </div>
 
         <div class="max-w-6xl mx-auto">
-            <!-- Partners Row 1 -->
             <div
                 class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-12">
                 <div
@@ -603,7 +549,6 @@
                 </div>
             </div>
 
-            <!-- Partners Row 2 -->
             <div
                 class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-12">
                 <div
@@ -657,9 +602,7 @@
                 </div>
             </div>
 
-            <!-- Partners Row 3 -->
-            <div
-                class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-16 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-16 mb-12">
                 <div
                     class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
                     <img
@@ -703,8 +646,7 @@
                         class="h-12 object-contain" />
                 </div>
             </div>
-
-            <!-- Partners Row 4 -->
+            {{-- This row has fewer items, so the grid might not fill evenly. You might need to adjust grid-cols or add empty divs if visual balance is critical. --}}
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
                 <div
                     class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
@@ -739,10 +681,9 @@
     </div>
 </section>
 
-<!-- Contact Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-2">Contact</h2>
+        <h2 class="text-3xl font-bold text-center mb-2">{{ __('about.contact_heading_section') }}</h2>
         <div class="flex justify-center mb-4">
             <div class="w-40 h-2 bg-gray-200 rounded-full relative">
                 <div
@@ -750,11 +691,9 @@
             </div>
         </div>
         <p class="text-center text-gray-700 mb-12">
-            Lorem ipsum Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem sint consectetur velit
+            {{ __('about.contact_tagline_section') }}
         </p>
 
-        <!-- Map -->
         <div class="w-full h-96 bg-gray-300 mb-12 rounded-lg overflow-hidden">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.5744113084522!2d104.00204025653267!3d1.049643199733973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98d54d7caf241%3A0xa361b2e811a92d7a!2sid.project!5e0!3m2!1sid!2sid!4v1745357954729!5m2!1sid!2sid"
@@ -768,30 +707,26 @@
         </div>
 
         <div class="flex flex-col md:flex-row gap-8">
-            <!-- Contact Info -->
             <div class="w-full md:w-1/2">
                 <div class="space-y-8">
-                    <!-- Location -->
                     <div class="flex items-start">
                         <div class="text-3xl text-gray-800 mr-4">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-2">Location</h3>
+                            <h3 class="text-lg font-bold mb-2">{{ __('about.contact_location_heading') }}</h3>
                             <p class="text-gray-700">
-                                Town House Buana Central Park<br />
-                                Blok Lexington No. 112 B, Kota Batam, Kep. Riau.
+                                {!! __('about.contact_location_address') !!}
                             </p>
                         </div>
                     </div>
 
-                    <!-- Phone -->
                     <div class="flex items-start">
                         <div class="text-3xl text-gray-800 mr-4">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-2">Phone</h3>
+                            <h3 class="text-lg font-bold mb-2">{{ __('about.contact_phone_heading') }}</h3>
                             <p class="text-gray-700">
                                 0778 - 3852963<br />
                                 0895 - 3149 - 8443
@@ -799,26 +734,24 @@
                         </div>
                     </div>
 
-                    <!-- Email -->
                     <div class="flex items-start">
                         <div class="text-3xl text-gray-800 mr-4">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-2">Email</h3>
+                            <h3 class="text-lg font-bold mb-2">{{ __('about.contact_email_heading') }}</h3>
                             <p class="text-gray-700">
                                 i.d.project.official01@gmail.com
                             </p>
                         </div>
                     </div>
 
-                    <!-- Follow Us -->
                     <div class="flex items-start">
                         <div class="text-3xl text-gray-800 mr-4">
                             <i class="fas fa-share-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-2">Follow Us</h3>
+                            <h3 class="text-lg font-bold mb-2">{{ __('about.contact_follow_us_heading') }}</h3>
                             <div class="flex space-x-4">
                                 <a
                                     href="https://www.facebook.com/apriliane.fress"
@@ -846,10 +779,9 @@
                 </div>
             </div>
 
-            <!-- Instagram Feed -->
             <blockquote
                 class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DI8AL_Czyrk/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                data-instgrm-permalink="https://www.instagram.com/p/CnTBOyYB6Gv/?utm_source=ig_web_copy_link"
                 data-instgrm-version="12"
                 style="
                     background: #fff;
@@ -1129,45 +1061,23 @@
                 Code Generator
             </div>
         </div>
-        <style>
-            .boxes3 {
-                height: 175px;
-                width: 153px;
-            }
-
-            #n img {
-                max-height: none !important;
-                max-width: none !important;
-                background: none !important;
-            }
-
-            #inst i {
-                max-height: none !important;
-                max-width: none !important;
-                background: none !important;
-            }
-        </style>
     </div>
 </section>
 
-<!-- CTA Section -->
 <section class="py-16 bg-gray-900 text-white">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">
-                Ready to Start Your Project?
+                {{ __('about.cta_heading') }}
             </h2>
             <p class="text-lg mb-8">
-                Contact us today for a free consultation and let us help you
-                bring your vision to life.
+                {{ __('about.cta_tagline') }}
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a
-                    href=""
-                    class="btn bg-project-red hover:bg-red-700 text-white px-8 py-3 rounded-full">Contact Us</a>
-                <a
-                    href="#"
-                    class="btn bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-full">Our Services</a>
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}"
+                    class="btn bg-project-red hover:bg-red-700 text-white px-8 py-3 rounded-full">{{ __('about.cta_contact_button') }}</a>
+
             </div>
         </div>
     </div>

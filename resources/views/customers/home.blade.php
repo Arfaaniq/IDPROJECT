@@ -1,4 +1,5 @@
-@extends('customers.layouts.app') @section('title', 'home - ID PROJECT')
+@extends('customers.layouts.app')
+@section('title', 'home - ID PROJECT')
 @section('content')
 
 <!-- Hero Section dengan Image Slider -->
@@ -19,19 +20,19 @@
             <div class="absolute inset-0 flex items-center justify-start">
                 <div class="text-white ml-16 max-w-2xl">
                     <h1 class="text-5xl font-bold mb-4 leading-tight">
-                        Welcome to Our <span class="text-red-500">PROJECT</span>
+                        {!! __('home.welcome_title') !!}
                     </h1>
                     <p class="text-xl mb-8 opacity-90">
-                        One Stop Service untuk semua kebutuhan project Anda
+                        {{ __('home.welcome_tagline') }}
                     </p>
                     <div class="flex gap-4">
                         <button
                             class="btn bg-red-500 text-white hover:bg-red-600 border-none px-8">
-                            Get Started
+                            {{ __('home.get_started_btn') }}
                         </button>
                         <button
                             class="btn btn-outline border-white text-white hover:bg-white hover:text-black px-8">
-                            Learn More
+                            {{ __('home.learn_more_btn') }}
                         </button>
                     </div>
                 </div>
@@ -50,19 +51,19 @@
             <div class="absolute inset-0 flex items-center justify-start">
                 <div class="text-white ml-16 max-w-2xl">
                     <h1 class="text-5xl font-bold mb-4 leading-tight">
-                        Professional <span class="text-red-500">Services</span>
+                        {!! __('home.professional_services_title') !!}
                     </h1>
                     <p class="text-xl mb-8 opacity-90">
-                        Solusi terbaik dengan kualitas premium untuk bisnis Anda
+                        {{ __('home.professional_services_tagline') }}
                     </p>
                     <div class="flex gap-4">
                         <button
                             class="btn bg-red-500 text-white hover:bg-red-600 border-none px-8">
-                            Our Services
+                            {{ __('home.our_services_btn') }}
                         </button>
                         <button
                             class="btn btn-outline border-white text-white hover:bg-white hover:text-black px-8">
-                            Portfolio
+                            {{ __('home.portfolio_btn') }}
                         </button>
                     </div>
                 </div>
@@ -81,21 +82,19 @@
             <div class="absolute inset-0 flex items-center justify-start">
                 <div class="text-white ml-16 max-w-2xl">
                     <h1 class="text-5xl font-bold mb-4 leading-tight">
-                        Innovation &
-                        <span class="text-red-500">Excellence</span>
+                        {!! __('home.innovation_excellence_title') !!}
                     </h1>
                     <p class="text-xl mb-8 opacity-90">
-                        Bergabunglah dengan ribuan klien yang telah mempercayai
-                        kami
+                        {{ __('home.innovation_excellence_tagline') }}
                     </p>
                     <div class="flex gap-4">
                         <button
                             class="btn bg-red-500 text-white hover:bg-red-600 border-none px-8">
-                            Contact Us
+                            {{ __('home.contact_us_btn') }}
                         </button>
                         <button
                             class="btn btn-outline border-white text-white hover:bg-white hover:text-black px-8">
-                            About Us
+                            {{ __('home.about_us_btn') }}
                         </button>
                     </div>
                 </div>
@@ -255,23 +254,15 @@
                     class="rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none shadow-lg w-full" />
             </div>
             <div class="w-full md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4">Tentang Kami</h2>
+                <h2 class="text-3xl font-bold mb-4">{{ __('home.about_us_heading') }}</h2>
                 <p class="text-gray-700 mb-4">
-                    Perusahaan kami didirikan pada tahun 2020 dan telah
-                    mendedikasikan diri dalam industri konstruksi dengan fokus
-                    khusus pada renovasi. Seiring berjalannya waktu, kami terus
-                    berupaya untuk melakukan inovasi yang berkelanjutan.
+                    {{ __('home.about_us_paragraph1') }}
                 </p>
                 <p class="text-gray-700 mb-4">
-                    Sehingga saat ini kami memiliki sumber daya yang handal
-                    diberbagai bidang sehingga dapat menyajikan beragam produk
-                    dan layanan dalam kerangka
-                    <span class="font-semibold">One Stop Service</span>.
+                    {!! __('home.about_us_paragraph2') !!}
                 </p>
                 <p class="text-gray-700">
-                    Portofolio layanan kami mencakup Desain, Pembangunan,
-                    Renovasi, Desain Interior, Lansekap, Pemeliharaan, Layanan
-                    Teknik Sipil dan Layanan Listrik.
+                    {{ __('home.about_us_paragraph3') }}
                 </p>
             </div>
         </div>
@@ -285,13 +276,12 @@
             <!-- Feature 1 -->
             <div class="flex items-start">
                 <div class="bg-project-red rounded-full p-3 mr-4 text-white">
-                    <i class="fas fa-building"></i>
+                    <i class="bi bi-stars"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-2">100+ PROJECT</h3>
+                    <h3 class="text-xl font-bold mb-2">{{ __('home.projects_count_heading') }}</h3>
                     <p class="text-gray-700">
-                        Kami berpengalaman lebih dari 100 project dan kami juga
-                        berpartner dengan banyak brand untuk wujudkan impianmu.
+                        {{ __('home.projects_count_description') }}
                     </p>
                 </div>
             </div>
@@ -299,13 +289,12 @@
             <!-- Feature 2 -->
             <div class="flex items-start">
                 <div class="bg-project-red rounded-full p-3 mr-4 text-white">
-                    <i class="fas fa-building"></i>
+                    <i class="fas fa-comments"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-2">100+ PROJECT</h3>
+                    <h3 class="text-xl font-bold mb-2">{{ __('home.free_consultation_heading') }}</h3>
                     <p class="text-gray-700">
-                        Kami berpengalaman lebih dari 100 project dan kami juga
-                        berpartner dengan banyak brand untuk wujudkan impianmu.
+                        {{ __('home.free_consultation_description') }}
                     </p>
                 </div>
             </div>
@@ -313,13 +302,12 @@
             <!-- Feature 3 -->
             <div class="flex items-start">
                 <div class="bg-project-red rounded-full p-3 mr-4 text-white">
-                    <i class="fas fa-building"></i>
+                    <i class="fa-solid fa-truck"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-2">100+ PROJECT</h3>
+                    <h3 class="text-xl font-bold mb-2">{{ __('home.out_of_town_service_heading') }}</h3>
                     <p class="text-gray-700">
-                        Kami berpengalaman lebih dari 100 project dan kami juga
-                        berpartner dengan banyak brand untuk wujudkan impianmu.
+                        {{ __('home.out_of_town_service_description') }}
                     </p>
                 </div>
             </div>
@@ -327,14 +315,12 @@
             <!-- Feature 4 -->
             <div class="flex items-start">
                 <div class="bg-project-red rounded-full p-3 mr-4 text-white">
-                    <i class="fas fa-comments"></i>
+                    <i class="fa-solid fa-users"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Free Konsultasi</h3>
+                    <h3 class="text-xl font-bold mb-2">{{ __('home.certified_operator_heading') }}</h3>
                     <p class="text-gray-700">
-                        Kami menawarkan konsultasi gratis untuk membantu Anda
-                        memperoleh informasi dan rekomendasi untuk kebutuhan
-                        anda.
+                        {{ __('home.certified_operator_description') }}
                     </p>
                 </div>
             </div>
@@ -342,14 +328,12 @@
             <!-- Feature 5 -->
             <div class="flex items-start">
                 <div class="bg-project-red rounded-full p-3 mr-4 text-white">
-                    <i class="fas fa-comments"></i>
+                    <i class="fa-solid fa-rocket"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Free Konsultasi</h3>
+                    <h3 class="text-xl font-bold mb-2">{{ __('home.one_stop_service_heading') }}</h3>
                     <p class="text-gray-700">
-                        Kami menawarkan konsultasi gratis untuk membantu Anda
-                        memperoleh informasi dan rekomendasi untuk kebutuhan
-                        anda.
+                        {{ __('home.one_stop_service_description') }}
                     </p>
                 </div>
             </div>
@@ -357,14 +341,12 @@
             <!-- Feature 6 -->
             <div class="flex items-start">
                 <div class="bg-project-red rounded-full p-3 mr-4 text-white">
-                    <i class="fas fa-comments"></i>
+                    <i class="fa-solid fa-phone"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Free Konsultasi</h3>
+                    <h3 class="text-xl font-bold mb-2">{{ __('home.contact_us_now_heading') }}</h3>
                     <p class="text-gray-700">
-                        Kami menawarkan konsultasi gratis untuk membantu Anda
-                        memperoleh informasi dan rekomendasi untuk kebutuhan
-                        anda.
+                        {{ __('home.contact_us_now_description') }}
                     </p>
                 </div>
             </div>
@@ -372,89 +354,83 @@
     </div>
 </section>
 
-<!-- Services Section -->
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">
-            Layanan Yang Kami Tawarkan
+            {{ __('home.services_heading') }}
         </h2>
         <p class="text-center text-gray-700 mb-12">
-            Kami menyediakan berbagai layanan
+            {{ __('home.services_tagline') }}
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Service 1 -->
             <div
                 class="service-card bg-white p-6 rounded-lg shadow-sm text-center">
                 <div class="service-icon">
                     <i class="fas fa-home text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">INTERIOR & EKSTERIOR</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.interior_exterior_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa untuk mempercantik tampilan rumah, apartement, kantor,
-                    gedung dan lain-lain
+                    {{ __('home.interior_exterior_description') }}
                 </p>
             </div>
 
-            <!-- Service 2 -->
             <div
                 class="service-card bg-white p-6 rounded-lg shadow-sm text-center">
                 <div class="service-icon">
                     <i class="fas fa-tools text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">RENOVASI</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.renovation_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa renovasi rumah, kantor, gedung, apartement dan banyak
-                    lagi
+                    {{ __('home.renovation_description') }}
                 </p>
             </div>
 
-            <!-- Service 3 -->
             <div
                 class="service-card bg-white p-6 rounded-lg shadow-sm text-center">
                 <div class="service-icon">
                     <i class="fas fa-road text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">CIVIL</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.civil_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa pembangunan jalan raya, jembatan, fly over, underpass
-                    dan lain-lain
+                    {{ __('home.civil_description') }}
                 </p>
             </div>
 
-            <!-- Service 4 -->
             <div
                 class="service-card bg-white p-6 rounded-lg shadow-sm text-center">
                 <div class="service-icon">
                     <i class="fas fa-tree text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" v class="hover:underline">LANDSCAPE</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" v class="hover:underline">{{ __('home.landscape_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa pembuatan taman rumah, kolam, taman cafe, taman hiburan
-                    dan lain-lain
+                    {{ __('home.landscape_description') }}
                 </p>
             </div>
 
-            <!-- Service 5 -->
             <div
                 class="service-card bg-white p-6 rounded-lg shadow-sm text-center">
                 <div class="service-icon">
                     <i class="fas fa-truck text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">MELAYANI LUAR KOTA</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.out_of_town_service_card_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Agar lebih dekat dengan Anda, Kami Melayani Jasa Renovasi &
-                    Build untuk Luar Kota
+                    {{ __('home.out_of_town_service_card_description') }}
                 </p>
             </div>
 
@@ -465,11 +441,11 @@
                     <i class="fas fa-building text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">BUILD</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.build_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa pembangunan rumah, gedung, kantor, apartement dan
-                    lain-lain
+                    {{ __('home.build_description') }}
                 </p>
             </div>
 
@@ -480,11 +456,11 @@
                     <i class="fas fa-wrench text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">MAINTENANCE</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.maintenance_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa perbaikan untuk alat elektronik, septic tank dan
-                    lain-lain
+                    {{ __('home.maintenance_description') }}
                 </p>
             </div>
 
@@ -495,11 +471,11 @@
                     <i class="fas fa-pencil-ruler text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">ELEKTRIKAL</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.design_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa design gambar 2d dan 3D serta RAB untuk pembangunan
-                    tempat impianmu
+                    {{ __('home.design_description') }}
                 </p>
             </div>
 
@@ -510,11 +486,11 @@
                     <i class="fas fa-bolt text-4xl text-gray-800"></i>
                 </div>
                 <h3 class="text-project-red font-bold mb-3">
-                    <a href="#" class="hover:underline">RENOVASI</a>
+                    <a class="nav-link {{ request()->routeIs('orderservice*') ? 'active' : '' }}"
+                    href="{{ auth()->check() ? route('orderservice.form') : route('login') }}" class="hover:underline">{{ __('home.elektrikal_heading') }}</a>
                 </h3>
                 <p class="text-gray-700 text-sm">
-                    Jasa instalasi alat-alat listrik, mesin di rumah, kantor,
-                    gedung dan lain-lain
+                    {{ __('home.elektrikal_description') }}
                 </p>
             </div>
         </div>
@@ -525,7 +501,7 @@
 <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center text-project-red mb-12">
-            Buat Janji Temu
+            {{ __('home.make_appointment_heading') }}
         </h2>
 
         <div class="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow-md">
@@ -536,48 +512,47 @@
                         <div>
                             <input
                                 type="text"
-                                placeholder="Nama Lengkap"
+                                placeholder="{{ __('home.full_name_placeholder') }}"
                                 class="input input-bordered w-full" />
                         </div>
                         <div>
                             <input
                                 type="email"
-                                placeholder="Email"
+                                placeholder="{{ __('home.email_placeholder') }}"
                                 class="input input-bordered w-full" />
                         </div>
                         <div>
                             <input
                                 type="tel"
-                                placeholder="No. Handphone/WA"
+                                placeholder="{{ __('home.phone_whatsapp_placeholder') }}"
                                 class="input input-bordered w-full" />
                         </div>
                         <div>
                             <textarea
-                                placeholder="Catatan/Keluhan"
+                                placeholder="{{ __('home.notes_complaints_placeholder') }}"
                                 class="textarea textarea-bordered w-full h-40"></textarea>
                         </div>
                     </div>
 
-                    <!-- Right Column -->
                     <div class="space-y-6">
                         <div>
                             <input
                                 type="date"
-                                placeholder="Tanggal temu"
+                                placeholder="{{ __('home.appointment_date_placeholder') }}"
                                 class="input input-bordered w-full" />
                         </div>
                         <div>
                             <p class="text-sm text-gray-600 mb-1">
-                                Jam Operasional:
+                                {{ __('home.operational_hours') }}
                             </p>
                             <p class="text-sm text-gray-600 mb-4">
-                                Senin/Minggu : 09.00 AM - 17.00 PM
+                                {{ __('home.operational_hours_time') }}
                             </p>
                         </div>
                         <div>
                             <select class="select select-bordered w-full">
                                 <option value="" disabled selected>
-                                    Pilih Jam Mulai
+                                    {{ __('home.select_start_time_placeholder') }}
                                 </option>
 
                                 <option value="09:00">09:00 AM</option>
@@ -666,73 +641,73 @@
                         </div>
 
                         <div>
-                            <p class="font-medium mb-3">Pilih Layanan</p>
+                            <p class="font-medium mb-3">{{ __('home.select_service_heading') }}</p>
                             <div class="grid grid-cols-2 gap-3">
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Renovasi</span>
+                                    <span class="text-sm">{{ __('home.service_renovation') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Civil</span>
+                                    <span class="text-sm">{{ __('home.service_civil') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Landscape</span>
+                                    <span class="text-sm">{{ __('home.service_landscape') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Melayani Luar Kota</span>
+                                    <span class="text-sm">{{ __('home.service_out_of_town') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Build</span>
+                                    <span class="text-sm">{{ __('home.service_build') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Maintenance</span>
+                                    <span class="text-sm">{{ __('home.service_maintenance') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Design</span>
+                                    <span class="text-sm">{{ __('home.service_design') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Elektrikal</span>
+                                    <span class="text-sm">{{ __('home.service_elektrikal') }}</span>
                                 </label>
                             </div>
                         </div>
 
                         <div>
-                            <p class="font-medium mb-3">Pilih Metode</p>
+                            <p class="font-medium mb-3">{{ __('home.select_method_heading') }}</p>
                             <div class="grid grid-cols-2 gap-3">
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Diskusi Online</span>
+                                    <span class="text-sm">{{ __('home.method_online_discussion') }}</span>
                                 </label>
                                 <label class="flex items-center gap-2">
                                     <input
                                         type="checkbox"
                                         class="checkbox checkbox-sm checkbox-error" />
-                                    <span class="text-sm">Diskusi Offline</span>
+                                    <span class="text-sm">{{ __('home.method_offline_discussion') }}</span>
                                 </label>
                             </div>
                         </div>
@@ -741,7 +716,7 @@
                             <input
                                 type="checkbox"
                                 class="checkbox checkbox-sm" />
-                            <span class="text-sm">Saya bukan robot</span>
+                            <span class="text-sm">{{ __('home.not_a_robot_checkbox') }}</span>
                             <img
                                 src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
                                 alt="reCAPTCHA"
@@ -754,7 +729,7 @@
                     <a
                         href="{{ auth()->check() ? route('orderservice.form') : route('login') }}"
                         class="btn btn-error text-white px-12 rounded-full">
-                        Buat Janji Temu
+                        {{ __('home.make_appointment_button') }}
                     </a>
                 </div>
             </form>
@@ -762,70 +737,47 @@
     </div>
 </section>
 
-<!-- Projects Section -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-white" x-data="projectSwitcher()">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-2">Proyek Kami</h2>
+        <h2 class="text-3xl font-bold text-center mb-2 judul">{{ __('home.our_projects_heading') }}</h2>
         <div class="flex justify-center mb-16">
             <div class="w-40 h-2 bg-gray-200 rounded-full relative">
-                <div
-                    class="w-10 h-2 bg-gray-800 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                <div class="w-10 h-2 bg-gray-800 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
             </div>
         </div>
 
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row gap-12">
-                <!-- Project Menu -->
                 <div class="w-full md:w-1/4">
                     <div class="space-y-6 relative">
-                        <div
-                            class="project-menu-item text-project-red font-semibold">
-                            Proyek Design
-                        </div>
-                        <div class="project-menu-item">Proyek Build</div>
-                        <div class="project-menu-item">Proyek Renovasi</div>
-                        <div class="project-menu-item">Proyek Interior</div>
-                        <div class="project-menu-item">Proyek Eksterior</div>
-                        <div class="project-menu-item">Proyek Landscape</div>
-                        <div class="project-menu-item">Proyek Civil</div>
+                        <template x-for="(project, index) in projects" :key="index">
+                            <div
+                                @click="selected = index"
+                                class="cursor-pointer transition-all duration-200"
+                                :class="selected === index ? 'text-project-red font-semibold' : 'text-gray-800'"
+                                x-text="project.name"
+                            ></div>
+                        </template>
 
-                        <!-- Vertical Line -->
-                        <div
-                            class="absolute top-0 bottom-0 right-0 w-px bg-gray-300 hidden md:block"></div>
+                        <div class="absolute top-0 bottom-0 right-0 w-px bg-gray-300 hidden md:block"></div>
                     </div>
                 </div>
 
-                <!-- Project Content -->
                 <div class="w-full md:w-3/4">
-                    <div class="project-content">
-                        <h3 class="text-xl font-medium mb-6">
-                            Perumahan Tiban Patam Lestari
-                        </h3>
+                    <div class="project-content" x-transition>
+                        <h3 class="text-xl font-medium mb-6" x-text="projects[selected].title"></h3>
                         <div class="flex flex-col md:flex-row gap-8">
                             <div class="w-full md:w-3/5">
-                                <p class="text-gray-700 mb-4">
-                                    Qui laudantium consequatur laborum sit qui
-                                    ad sapiente dila parde sonata raqer a videna
-                                    mareta paulona marka
-                                </p>
-                                <p class="text-gray-700 mb-4">
-                                    Et nobis maiores eius. Voluptatibus ut enim
-                                    blanditiis atque harum sint. Laborum eos
-                                    ipsum ipsa odit magni. Incidunt hic ut
-                                    molestiae aut qui.
-                                </p>
-                                <p class="text-gray-700">
-                                    Est repellat minima eveniet eius et quis
-                                    magni nihil. Consequatur dolorem quaerat
-                                    quos qui similique accusamus nostrum rem
-                                    vero
-                                </p>
+                                <p class="text-gray-700 mb-4" x-text="projects[selected].description1"></p>
+                                <p class="text-gray-700 mb-4" x-text="projects[selected].description2"></p>
+                                <p class="text-gray-700" x-text="projects[selected].description3"></p>
                             </div>
                             <div class="w-full md:w-2/5">
                                 <img
-                                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1470"
-                                    alt="Perumahan Tiban Patam Lestari"
-                                    class="w-full h-auto rounded-lg" />
+                                    :src="projects[selected].image"
+                                    :alt="projects[selected].title"
+                                    class="w-full h-auto rounded-lg"
+                                />
                             </div>
                         </div>
                     </div>
@@ -835,12 +787,78 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
+<script>
+    function projectSwitcher() {
+        return {
+            selected: 0,
+            projects: [
+                {
+                    name: '{{ __("home.project_design_name") }}',
+                    title: '{{ __("home.project_design_title") }}',
+                    description1: '{{ __("home.project_design_desc1") }}',
+                    description2: '{{ __("home.project_design_desc2") }}',
+                    description3: '{{ __("home.project_design_desc3") }}',
+                    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1470',
+                },
+                {
+                    name: '{{ __("home.project_build_name") }}',
+                    title: '{{ __("home.project_build_title") }}',
+                    description1: '{{ __("home.project_build_desc1") }}',
+                    description2: '{{ __("home.project_build_desc2") }}',
+                    description3: '{{ __("home.project_build_desc3") }}',
+                    image: 'https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1470',
+                },
+                {
+                    name: '{{ __("home.project_renovation_name") }}',
+                    title: '{{ __("home.project_renovation_title") }}',
+                    description1: '{{ __("home.project_renovation_desc1") }}',
+                    description2: '{{ __("home.project_renovation_desc2") }}',
+                    description3: '{{ __("home.project_renovation_desc3") }}',
+                    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470',
+                },
+                {
+                    name: '{{ __("home.project_interior_name") }}',
+                    title: '{{ __("home.project_interior_title") }}',
+                    description1: '{{ __("home.project_interior_desc1") }}',
+                    description2: '{{ __("home.project_interior_desc2") }}',
+                    description3: '{{ __("home.project_interior_desc3") }}',
+                    image: 'https://images.unsplash.com/photo-1615874959474-d609969a1b90?q=80&w=1470',
+                },
+                {
+                    name: '{{ __("home.project_exterior_name") }}',
+                    title: '{{ __("home.project_exterior_title") }}',
+                    description1: '{{ __("home.project_exterior_desc1") }}',
+                    description2: '{{ __("home.project_exterior_desc2") }}',
+                    description3: '{{ __("home.project_exterior_desc3") }}',
+                    image: 'https://images.unsplash.com/photo-1618220179428-217d73e8f39b?q=80&w=1470',
+                },
+                {
+                    name: '{{ __("home.project_landscape_name") }}',
+                    title: '{{ __("home.project_landscape_title") }}',
+                    description1: '{{ __("home.project_landscape_desc1") }}',
+                    description2: '{{ __("home.project_landscape_desc2") }}',
+                    description3: '{{ __("home.project_landscape_desc3") }}',
+                    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1470',
+                },
+                {
+                    name: '{{ __("home.project_civil_name") }}',
+                    title: '{{ __("home.project_civil_title") }}',
+                    description1: '{{ __("home.project_civil_desc1") }}',
+                    description2: '{{ __("home.project_civil_desc2") }}',
+                    description3: '{{ __("home.project_civil_desc3") }}',
+                    image: 'https://images.unsplash.com/photo-1597007633943-1b2b8d6e315d?q=80&w=1470',
+                },
+            ]
+        }
+    }
+</script>
+
+
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <div class="flex flex-col items-start max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-1">Testimoni</h2>
-            <p class="text-gray-700 mb-8">Lihat Review Client Kami disini.</p>
+            <h2 class="text-3xl font-bold mb-1">{{ __('home.testimonials_heading') }}</h2>
+            <p class="text-gray-700 mb-8">{{ __('home.testimonials_tagline') }}</p>
 
             <div class="w-full bg-white p-6 rounded-lg shadow-md">
                 <div class="flex flex-col md:flex-row items-center gap-6">
@@ -926,7 +944,7 @@
                 </div>
                 @empty
                 <div class="col-span-4 text-center text-white">
-                    Belum ada embed tersedia.
+                    {{ __('home.no_embeds_available') }}
                 </div>
                 @endforelse
             </div>
@@ -934,10 +952,9 @@
     </div>
 </section>
 
-<!-- Gallery Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-2 judul">Project Kami</h2>
+        <h2 class="text-3xl font-bold text-center mb-2 judul">{{ __('home.our_projects_heading') }}</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @foreach($projects as $project)
@@ -958,10 +975,9 @@
 </section>
 
 
-<!-- Contact Us Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-2">Hubungi Kami</h2>
+        <h2 class="text-3xl font-bold text-center mb-2">{{ __('home.contact_us_heading_section') }}</h2>
         <div class="flex justify-center mb-4">
             <div class="w-40 h-2 bg-gray-200 rounded-full relative">
                 <div
@@ -969,11 +985,9 @@
             </div>
         </div>
         <p class="text-center text-gray-700 mb-12">
-            Lorem ipsum Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem sint consectetur velit
+            {{ __('home.contact_us_tagline_section') }}
         </p>
 
-        <!-- Map -->
         <div class="w-full h-96 bg-gray-300 mb-12 rounded-lg overflow-hidden">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.5744113084522!2d104.00204025653267!3d1.049643199733973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98d54d7caf241%3A0xa361b2e811a92d7a!2sid.project!5e0!3m2!1sid!2sid!4v1745357954729!5m2!1sid!2sid"
@@ -986,30 +1000,26 @@
         </div>
 
         <div class="flex flex-col md:flex-row gap-8">
-            <!-- Contact Info -->
             <div class="w-full md:w-1/3">
                 <div class="space-y-8">
-                    <!-- Location -->
                     <div class="flex items-start">
                         <div class="text-3xl text-gray-800 mr-4">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-2">Location</h3>
+                            <h3 class="text-lg font-bold mb-2">{{ __('home.location_heading') }}</h3>
                             <p class="text-gray-700">
-                                Town House Buena Central Park<br />
-                                Blok Lexington No. 112 B, Kota Batam, Kep. Riau.
+                                {!! __('home.location_address') !!}
                             </p>
                         </div>
                     </div>
 
-                    <!-- Phone -->
                     <div class="flex items-start">
                         <div class="text-3xl text-gray-800 mr-4">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-2">Phone</h3>
+                            <h3 class="text-lg font-bold mb-2">{{ __('home.phone_heading') }}</h3>
                             <p class="text-gray-700">
                                 0778 - 2552963<br />
                                 0812 - 7123 - 8443
@@ -1017,13 +1027,12 @@
                         </div>
                     </div>
 
-                    <!-- Email -->
                     <div class="flex items-start">
                         <div class="text-3xl text-gray-800 mr-4">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold mb-2">Email</h3>
+                            <h3 class="text-lg font-bold mb-2">{{ __('home.email_heading') }}</h3>
                             <p class="text-gray-700">
                                 id.project.official@gmail.com
                             </p>
@@ -1032,35 +1041,22 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
             <div class="w-full md:w-2/3">
-                <form>
+                <form action="{{ route('contact.send') }}" method="POST">
+                    @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            class="input input-bordered w-full" />
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            class="input input-bordered w-full" />
+                        <input type="text" name="name" placeholder="{{ __('home.your_name_placeholder') }}" class="input input-bordered w-full" required />
+                        <input type="email" name="email" placeholder="{{ __('home.your_email_placeholder') }}" class="input input-bordered w-full" required />
                     </div>
                     <div class="mb-4">
-                        <input
-                            type="text"
-                            placeholder="Subject"
-                            class="input input-bordered w-full" />
+                        <input type="text" name="subject" placeholder="{{ __('home.subject_placeholder') }}" class="input input-bordered w-full" required />
                     </div>
                     <div class="mb-6">
-                        <textarea
-                            placeholder="Message"
-                            class="textarea textarea-bordered w-full h-40"></textarea>
+                        <textarea name="message" placeholder="{{ __('home.message_placeholder') }}" class="textarea textarea-bordered w-full h-40" required></textarea>
                     </div>
                     <div class="text-center">
-                        <button
-                            type="submit"
-                            class="btn bg-project-red hover:bg-red-700 text-white px-8 rounded-full">
-                            Send Message
+                        <button type="submit" class="btn bg-project-red hover:bg-red-700 text-white px-8 rounded-full">
+                            {{ __('home.send_message_button') }}
                         </button>
                     </div>
                 </form>

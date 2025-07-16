@@ -255,10 +255,10 @@
                                         </div>
 
                                         <!-- Existing file upload -->
-                                        <div class="mb-3">
+                                        <!---<div class="mb-3">
                                             <label for="invoice-{{ $item->id }}" class="form-label">File Invoice (PDF)</label>
                                             <input type="file" class="form-control" id="invoice-{{ $item->id }}" name="invoice" accept=".pdf" required>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

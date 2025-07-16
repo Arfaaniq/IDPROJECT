@@ -31,13 +31,13 @@ class LoginController extends Controller
     // Hadle logout
     public function destroy(Request $request): RedirectResponse
     {
-        if (! $request->hasValidSignature()) {
-            abort(401);
-        }
+        // if (! $request->hasValidSignature()) {
+        //     abort(401);
+        // }
 
         Auth::guard('admin')->logout();
 
-        // $request->session()->invalidate();
+        $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 

@@ -12,12 +12,11 @@ class InstagramEmbedController extends Controller
      * Display the main page with form and embeds
      */
     public function index()
-    {
-        $embeds = InstagramEmbed::latest()->get();
-        $recentEmbeds = InstagramEmbed::latest()->limit(4)->get();
-        
-        return view('admin.Instagram', compact('embeds'));
-    }
+{
+    $reels = InstagramEmbed::latest()->get();
+    return view('admin.Instagram', compact('reels'));
+}
+
 
     /**
      * Store a new Instagram embed
