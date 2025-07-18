@@ -20,11 +20,13 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\InstagramEmbedController;
 
 Route::prefix('admin')->middleware('guest:admin')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])->name('admin.register');
-    Route::post('register', [RegisteredUserController::class, 'store']);
     Route::get('login', [LoginController::class, 'create'])->name('admin.login');
     Route::post('login', [LoginController::class, 'store']);
-    
+
+    // Route register jika diperlukan
+    Route::get('register', [RegisteredUserController::class, 'create'])->name('admin.register');
+    Route::post('register', [RegisteredUserController::class, 'store']);
+
     // Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
     // Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
     // Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
@@ -37,8 +39,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])
-        ->name('admin.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
 
     // Route::get('verify-email', EmailVerificationPromptController::class)->name('verification.notice');
