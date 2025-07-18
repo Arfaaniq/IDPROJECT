@@ -13,18 +13,22 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\InstagramEmbedController;
 
 // Admin Authentication Routes (Guest)
-Route::prefix('admin')->middleware('guest:admin')->group(function () {
-    Route::get('login', [LoginController::class, 'create'])->name('admin.login');
-    Route::post('login', [LoginController::class, 'store']);
-    
-    Route::get('register', [RegisteredUserController::class, 'create'])->name('admin.register');
-    Route::post('register', [RegisteredUserController::class, 'store']);
+Route::middleware('guest:admin')->group(function () {
+    Route::prefix('admin')->group(function () {
+        // Login Routes
+        Route::get('login', [LoginController::class, 'create'])->name('admin.login');
+        Route::post('login', [LoginController::class, 'store']);
+        
+        // Registration Routes (jika diperlukan)
+        Route::get('register', [RegisteredUserController::class, 'create'])->name('admin.register');
+        Route::post('register', [RegisteredUserController::class, 'store']);
+    });
 });
 
 // Admin Authenticated Routes
-Route::prefix('admin')->middleware('auth:admin')->group(function () {
+Route::prefix('admin')->middleware('auth:admin')->name('admin.')->group(function () {
     // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
     // Profile Management
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -65,5 +69,5 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     Route::delete('/instagram/{embed}', [InstagramEmbedController::class, 'destroy'])->name('instagram.destroy');
     
     // Logout
-    Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
+    Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
 });
