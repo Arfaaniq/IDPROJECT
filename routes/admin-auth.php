@@ -23,15 +23,20 @@ use App\Http\Controllers\InstagramEmbedController;
 // ADMIN GUEST ROUTES - Registration & Login
 // ====================================================================
 Route::prefix('admin')->middleware('guest:admin')->group(function () {
-    
+
     // Registration
     Route::get('register', [RegisteredUserController::class, 'create'])->name('admin.register');
     Route::post('register', [RegisteredUserController::class, 'store']);
-    
+
     // Login
     Route::get('login', [LoginController::class, 'create'])->name('admin.login');
     Route::post('login', [LoginController::class, 'store']);
-    
+
+    // Password Reset Routes (Currently Disabled)
+    Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
+    Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
+    Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
+    Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.store');
 });
 
 // ====================================================================
@@ -106,7 +111,6 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     // ================================================================
     Route::post('logout', [LoginController::class, 'destroy'])
         ->name('admin.logout');
-
 });
 
 // ====================================================================
