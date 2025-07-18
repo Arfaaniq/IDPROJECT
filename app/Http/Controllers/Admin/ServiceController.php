@@ -17,3 +17,5 @@ class ServiceController extends Controller
         return view('customers/service'); // Mengembalikan tampilan home.blade.php
     }
 }
+
+// jsa
