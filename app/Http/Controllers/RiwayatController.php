@@ -75,4 +75,21 @@ class RiwayatController extends Controller
 
         return redirect()->back()->with('success', 'Catatan admin berhasil diperbarui.');
     }
+    public function downloadLaporanBulanIni(Request $request){
+        $bulan = $request->input('bulan', now()->format('Y-m'));
+
+        $riwayats = \App\Models\Riwayat::whereYear('tanggal_temu', date('Y', strtotime($bulan)))
+        ->whereMonth('tanggal_temu', date('m', strtotime($bulan)))
+        ->orderBy('tanggal_temu', 'asc')
+        ->get();
+
+        $pdf = Pdf::loadView('laporan.bulanan', [
+            'riwayats' => $riwayats,
+            'bulan' => $bulan
+        ])->setPaper('A4', 'landscape');
+
+        $filename = 'laporan_konsultasi_' . date('F_Y', strtotime($bulan)) . '.pdf';
+
+        return $pdf->download($filename); // akan langsung download
+        }
 }
