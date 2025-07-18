@@ -15,7 +15,7 @@ class LoginController extends Controller
     // login admin
     public function create(): View
     {
-        return view('admin.auth.login');
+        return view('admin.Auth.login');
     }
 
     // Handle autentikasi dan return rute ke /admin/dashboard'
