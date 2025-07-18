@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller; 
 
-class BlogdetailController extends Controller
+class BlogDetailController extends Controller
 {
     /**
      * Menampilkan halaman utama (home).
