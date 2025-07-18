@@ -241,7 +241,7 @@
                         </a>
                         @endif
                         @endauth
-                        @guest
+                        <!-- @guest
                         {{-- Dropdown Admin Login -- Hanya muncul ketika user belum login --}}
                         <div class="dropdown dropdown-end">
                             <div tabindex="0" role="button" class="btn btn-ghost btn-sm">
@@ -252,7 +252,7 @@
                                 <li><a href="{{ route('admin.login') }}">Login Admin</a></li>
                             </ul>
                         </div>
-                        @endguest
+                        @endguest -->
                     </div>
                 </div>
 
