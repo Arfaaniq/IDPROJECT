@@ -33,7 +33,7 @@ use App\Http\Controllers\InstagramEmbedController;
 
 Route::get('/', function () { return view('welcome'); })->name('welcome');
 Route::get('/home', [HomeUserController::class, 'index'])->name('home');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/about', [App\Http\Controllers\Admin\AboutController::class, 'index'])->name('about');
 Route::get('/Service', [ServiceController::class, 'index'])->name('service');
 Route::get('/Blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/BlogDetail', [BlogDetailController::class, 'index'])->name('blogdetail');
