@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\HomeUserController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\blogdetailController;
+use App\Http\Controllers\Admin\BlogdetailController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogAdminController;
@@ -33,7 +33,7 @@ use App\Http\Controllers\InstagramEmbedController;
 
 Route::get('/', function () { return view('welcome'); })->name('welcome');
 Route::get('/home', [HomeUserController::class, 'index'])->name('home');
-Route::get('/about', [aboutController::class, 'index'])->name('about');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/Service', [ServiceController::class, 'index'])->name('service');
 Route::get('/Blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/BlogDetail', [BlogDetailController::class, 'index'])->name('blogdetail');
