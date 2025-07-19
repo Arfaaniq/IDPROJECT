@@ -19,66 +19,70 @@
     </div>
 </div>
 
-<div class="container py-4">
+<div class="container py-4" style="max-width: 95%; margin: 0 auto;">
     <div class="card shadow">
         <div class="card-header bg-primary text-white">
             <h4 class="mb-0"><i class="bi bi-list-check"></i> Status Pesanan & Invoice</h4>
         </div>
 
-        <div class="card-body p-0">
+        <div class="card-body">
             @if($verifies->isEmpty())
-                <div class="alert alert-info m-4">
+                <div class="alert alert-info">
                     <i class="bi bi-info-circle"></i> Belum ada pesanan atau invoice yang tersedia.
                 </div>
             @else
                 <div class="table-responsive">
-                    <table class="table table-hover table-striped mb-0">
-                        <thead class="table-dark">
+                    <table class="table table-hover table-striped"style="margin-bottom: 0;"">
+                        <thead class="table-light">
                             <tr>
-                                <th class="text-center" style="width: 10%;">
-                                    <i class="bi bi-hash"></i> ID
+                                <th class="text-center fw-semibold" style="width: 10%; padding: 15px 12px;">
+                                    <i class="bi bi-hash text-primary"></i> ID Pesanan
                                 </th>
-                                <th style="width: 15%;">
-                                    <i class="bi bi-person"></i> Nama
+                                <th class="fw-semibold" style="width: 15%; padding: 15px 12px;">
+                                    <i class="bi bi-person text-primary"></i> Nama Lengkap
                                 </th>
-                                <th class="text-center" style="width: 12%;">
-                                    <i class="bi bi-calendar"></i> Tanggal
+                                <th class="text-center fw-semibold" style="width: 12%; padding: 15px 12px;">
+                                    <i class="bi bi-calendar text-primary"></i> Tanggal
                                 </th>
-                                <th style="width: 15%;">
-                                    <i class="bi bi-gear"></i> Layanan
+                                <th class="fw-semibold" style="width: 15%; padding: 15px 12px;">
+                                    <i class="bi bi-gear text-primary"></i> Layanan
                                 </th>
-                                <th class="text-center" style="width: 10%;">
-                                    <i class="bi bi-flag"></i> Status
+                                <th class="text-center fw-semibold" style="width: 10%; padding: 15px 12px;">
+                                    <i class="bi bi-flag text-primary"></i> Status
                                 </th>
-                                <th class="text-end" style="width: 12%;">
-                                    <i class="bi bi-currency-dollar"></i> Total
+                                <th class="text-end fw-semibold" style="width: 12%; padding: 15px 12px;">
+                                    <i class="bi bi-currency-dollar text-primary"></i> Total Harga
                                 </th>
-                                <th style="width: 26%;">
-                                    <i class="bi bi-chat-text"></i> Catatan Admin
+                                <th class="fw-semibold" style="width: 26%; padding: 15px 12px;">
+                                    <i class="bi bi-chat-text text-primary"></i> Catatan Admin
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($verifies as $verify)
                             <tr>
-                                <td class="text-center align-middle">
-                                    <code class="text-primary">#{{ $verify->verify_id }}</code>
-                                </td>
-                                <td class="align-middle">
-                                    <div class="fw-semibold">{{ $verify->nama_lengkap }}</div>
-                                </td>
-                                <td class="text-center align-middle">
-                                    <small class="text-muted">
-                                        {{ \Carbon\Carbon::parse($verify->created_at)->format('d/m/Y') }}<br>
-                                        <span class="text-info">{{ \Carbon\Carbon::parse($verify->created_at)->format('H:i') }}</span>
-                                    </small>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="badge bg-light text-dark border">
-                                        {{ $verify->layanan ?? 'Tidak ada layanan' }}
+                                <td class="text-center align-middle" style="padding: 15px 12px;">
+                                    <span class="badge bg-primary-subtle text-primary border border-primary">
+                                        #{{ $verify->verify_id }}
                                     </span>
                                 </td>
-                                <td class="text-center align-middle">
+                                <td class="align-middle" style="padding: 15px 12px;">
+                                    <div class="fw-semibold text-dark">{{ $verify->nama_lengkap }}</div>
+                                </td>
+                                <td class="text-center align-middle" style="padding: 15px 12px;">
+                                    <div class="text-dark fw-medium">
+                                        {{ \Carbon\Carbon::parse($verify->created_at)->format('d/m/Y') }}
+                                    </div>
+                                    <small class="text-primary">
+                                        {{ \Carbon\Carbon::parse($verify->created_at)->format('H:i') }} WIB
+                                    </small>
+                                </td>
+                                <td class="align-middle" style="padding: 15px 12px;">
+                                    <div class="text-dark fw-medium">
+                                        {{ $verify->layanan ?? 'Tidak ada layanan' }}
+                                    </div>
+                                </td>
+                                <td class="text-center align-middle" style="padding: 15px 12px;">
                                     <span class="badge
                                         @if($verify->status == 'Selesai') bg-success
                                         @elseif($verify->status == 'Diterima') bg-primary
@@ -86,26 +90,23 @@
                                         @elseif($verify->status == 'Ditolak') bg-danger
                                         @elseif($verify->status == 'Batal') bg-secondary
                                         @else bg-warning text-dark @endif
-                                        px-3 py-2">
+                                        px-3 py-2 fs-6">
                                         {{ $verify->status }}
                                     </span>
                                 </td>
-                                <td class="text-end align-middle">
+                                <td class="text-end align-middle" style="padding: 15px 12px;">
                                     @if($verify->total_price)
-                                        <div class="fw-bold text-success">
+                                        <div class="fw-bold text-success fs-6">
                                             Rp {{ number_format($verify->total_price, 0, ',', '.') }}
                                         </div>
                                     @else
-                                        <span class="text-muted">-</span>
+                                        <span class="text-muted fst-italic">Belum ditetapkan</span>
                                     @endif
                                 </td>
-                                <td class="align-middle">
+                                <td class="align-middle" style="padding: 15px 12px;">
                                     @if($verify->admin_notes)
-                                        <div class="text-wrap" style="max-width: 200px;">
-                                            <small class="text-muted">
-                                                <i class="bi bi-chat-square-text"></i>
-                                                {{ Str::limit($verify->admin_notes, 80) }}
-                                            </small>
+                                        <div class="text-dark" style="max-width: 250px; line-height: 1.4;">
+                                            {{ $verify->admin_notes }}
                                         </div>
                                     @else
                                         <span class="text-muted fst-italic">Tidak ada catatan</span>
@@ -119,7 +120,7 @@
                 
                 <!-- Pagination jika ada -->
                 @if(method_exists($verifies, 'links'))
-                    <div class="d-flex justify-content-center mt-3 p-3">
+                    <div class="d-flex justify-content-center p-4">
                         {{ $verifies->links() }}
                     </div>
                 @endif
@@ -130,21 +131,54 @@
 
 <!-- Custom CSS untuk mobile responsiveness -->
 <style>
+/* Padding yang lebih baik untuk tabel */
+.table > :not(caption) > * > * {
+    padding: 15px 12px;
+}
+
+/* Memastikan teks terlihat dengan kontras yang baik */
+.table td {
+    color: #212529;
+    font-weight: 500;
+}
+
+/* Header styling */
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    color: #495057;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Row hover effect yang lebih smooth */
+.table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    transition: background-color 0.2s ease;
+}
+
+/* Badge styling improvements */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Responsive untuk mobile */
 @media (max-width: 768px) {
-    .table-responsive table {
-        font-size: 0.875rem;
+    .table-responsive {
+        border: none;
+        margin: 10px; /* Margin lebih kecil di mobile */
     }
     
-    .table td, .table th {
-        padding: 0.5rem;
-        white-space: nowrap;
+    .card {
+        margin: 0 10px !important; /* Override margin di mobile */
     }
     
-    .table td div, .table td span {
-        font-size: 0.8rem;
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
     
-    /* Stack pada mobile */
     .table thead {
         display: none;
     }
@@ -156,45 +190,113 @@
     
     .table tr {
         border: 1px solid #dee2e6;
-        margin-bottom: 1rem;
-        border-radius: 0.375rem;
-        padding: 0.75rem;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        padding: 20px;
         background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .table td {
         border: none;
-        border-bottom: 1px solid #f8f9fa;
+        border-bottom: 1px solid #f1f3f4;
         position: relative;
-        padding-left: 35% !important;
+        padding: 12px 0 12px 35% !important;
         text-align: left !important;
+        margin-bottom: 8px;
     }
     
     .table td:before {
-        content: attr(data-label) ": ";
+        content: attr(data-label);
         position: absolute;
-        left: 6px;
+        left: 0;
         width: 30%;
-        white-space: nowrap;
-        font-weight: bold;
+        font-weight: 600;
         color: #495057;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     
-    .table td:first-child:before { content: "ID: "; }
-    .table td:nth-child(2):before { content: "Nama: "; }
-    .table td:nth-child(3):before { content: "Tanggal: "; }
-    .table td:nth-child(4):before { content: "Layanan: "; }
-    .table td:nth-child(5):before { content: "Status: "; }
-    .table td:nth-child(6):before { content: "Total: "; }
-    .table td:nth-child(7):before { content: "Catatan: "; }
+    .table td:nth-child(1):before { content: "ID PESANAN"; }
+    .table td:nth-child(2):before { content: "NAMA"; }
+    .table td:nth-child(3):before { content: "TANGGAL"; }
+    .table td:nth-child(4):before { content: "LAYANAN"; }
+    .table td:nth-child(5):before { content: "STATUS"; }
+    .table td:nth-child(6):before { content: "TOTAL"; }
+    .table td:nth-child(7):before { content: "CATATAN"; }
+    
+    .table td:last-child {
+        border-bottom: none;
+    }
 }
 
+/* Desktop sticky header */
 @media (min-width: 769px) {
-    .table th {
+    .table thead th {
         position: sticky;
         top: 0;
-        background-color: #212529;
         z-index: 10;
+        background-color: #f8f9fa !important;
+    }
+    
+    .table-responsive {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+
+/* Card spacing */
+.card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 15px; /* Margin kiri-kanan untuk card */
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    padding: 20px 25px;
+}
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* Responsive margin untuk berbagai ukuran layar */
+@media (min-width: 576px) {
+    .card {
+        margin: 0 25px;
+    }
+    
+    .container {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        margin: 0 40px;
+    }
+    
+    .container {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        margin: 0 60px;
+    }
+    
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
     }
 }
 </style>
