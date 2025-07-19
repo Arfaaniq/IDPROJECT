@@ -71,7 +71,7 @@ class VerifyController extends Controller
             'status' => 'Diterima',
 
         ];
-        // Mail::to($verifies->email)->send(new IdProject($data));
+        Mail::to($verifies->email)->send(new IdProject($data));
 
         return redirect()->back()->with('success', 'Pesanan disetujui dan email terkirim.');
     }
@@ -92,7 +92,7 @@ class VerifyController extends Controller
             'layanan' => $verifies->layanan,
             'status' => 'Ditolak', // Status ini digunakan untuk email/notifikasi
         ];
-        // Mail::to($verifies->email)->send(new IdProject($data));
+        Mail::to($verifies->email)->send(new IdProject($data));
 
         return redirect()->back()->with('success', 'Pesanan ditolak dan telah dipindahkan ke riwayat.');
     }
