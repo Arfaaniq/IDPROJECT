@@ -13,7 +13,7 @@
 
     <strong>
         <h1 class="text-xl font-bold text-gray-900 mb-6">
-            Selamat datang, {{ Auth::user()->name }} 👋🏻
+            Selamat datang, {{ Auth::user()->name }} 
         </h1>
     </strong>
 

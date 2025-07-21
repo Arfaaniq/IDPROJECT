@@ -27,6 +27,7 @@
             Kami menyediakan berbagai layanan profesional untuk kebutuhan Anda
         </p>
 
+        <!-- menampilkan data blog -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <div class="lg:col-span-2 space-y-8">
                 @foreach ($blog as $item)
