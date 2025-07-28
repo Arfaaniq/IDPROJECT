@@ -5,8 +5,7 @@
     class="hero-section-100 py-20"
     style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{
         asset('assets/wallpaperflare-cropped2.jpg')
-    }}');"
->
+    }}');">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl font-bold mb-4 text-white">About ID PROJECT</h1>
@@ -42,6 +41,7 @@
                             <th style="padding: 15px 12px;">Status</th>
                             <th style="padding: 15px 12px;">Total Harga</th>
                             <th style="padding: 15px 12px;">Catatan Admin</th>
+                            <th style="padding: 15px 12px;">Invoice</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,6 +72,17 @@
                             <td style="padding: 15px 12px;">
                                 {{ $verify->admin_notes ?? '-' }}
                             </td>
+                            <td style="padding: 15px 12px;">
+                                @if($verify->invoice_path)
+                                <a href="{{ route('invoice.download', $verify->id) }}"
+                                    class="btn btn-sm btn-success"
+                                    title="Download Invoice">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                                @else
+                                <span class="text-muted">-</span>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -83,55 +94,55 @@
 </div>
 
 <style>
-/* Responsive margin untuk tabel */
-@media (max-width: 576px) {
-    .card {
-        margin: 0 10px !important;
-    }
-    
-    .table-responsive {
-        margin: 0 5px !important;
-    }
-}
+    /* Responsive margin untuk tabel */
+    @media (max-width: 576px) {
+        .card {
+            margin: 0 10px !important;
+        }
 
-@media (min-width: 577px) and (max-width: 768px) {
-    .card {
-        margin: 0 25px !important;
+        .table-responsive {
+            margin: 0 5px !important;
+        }
     }
-    
-    .table-responsive {
-        margin: 0 10px !important;
-    }
-}
 
-@media (min-width: 769px) and (max-width: 992px) {
-    .card {
-        margin: 0 40px !important;
-    }
-    
-    .table-responsive {
-        margin: 0 15px !important;
-    }
-}
+    @media (min-width: 577px) and (max-width: 768px) {
+        .card {
+            margin: 0 25px !important;
+        }
 
-@media (min-width: 993px) {
-    .card {
-        margin: 0 60px !important;
+        .table-responsive {
+            margin: 0 10px !important;
+        }
     }
-    
-    .table-responsive {
-        margin: 0 20px !important;
+
+    @media (min-width: 769px) and (max-width: 992px) {
+        .card {
+            margin: 0 40px !important;
+        }
+
+        .table-responsive {
+            margin: 0 15px !important;
+        }
     }
-}
 
-/* Padding untuk sel tabel */
-.table > :not(caption) > * > * {
-    padding: 15px 12px;
-}
+    @media (min-width: 993px) {
+        .card {
+            margin: 0 60px !important;
+        }
 
-/* Hover effect */
-.table tbody tr:hover {
-    background-color: rgba(0, 123, 255, 0.05);
-}
+        .table-responsive {
+            margin: 0 20px !important;
+        }
+    }
+
+    /* Padding untuk sel tabel */
+    .table> :not(caption)>*>* {
+        padding: 15px 12px;
+    }
+
+    /* Hover effect */
+    .table tbody tr:hover {
+        background-color: rgba(0, 123, 255, 0.05);
+    }
 </style>
 @endsection
