@@ -114,7 +114,7 @@ class VerifyController extends Controller
                 'layanan' => $verifies->layanan,
                 'status' => 'On Progress',
             ];
-            // Mail::to($verifies->email)->send(new IdProject($data));
+            Mail::to($verifies->email)->send(new IdProject($data));
 
             return redirect()->back()->with('success', 'Pesanan anda sedang dikerjakan');
         } elseif ($status === 'Batal' && in_array($verifies->status, ['Diterima', 'On Progress'])) {

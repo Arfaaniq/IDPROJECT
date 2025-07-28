@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-</head>
-
-<body>
     @extends('layouts.app')
-    @section('title', 'Verifikasi Jadwal')
+    @section('title', 'Verifikasi Jadwal')@section('title', 'Verifikasi- ID PROJECT')
 
     @section('content')
     <!-- Breadcrumb: judul menu yang dipilih, nanti tampilan di halaman Home / Dashboard / Verifikasi Jadwal -->
@@ -170,14 +157,23 @@
                         <td>
                             @if ($verify->status !== 'Selesai' && $verify->status !== 'Batal' && $verify->status !== 'Ditolak')
                             <div class="dropdown">
-                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     Ubah Status
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     @if ($verify->status === 'Menunggu')
-                                    <li><a class="dropdown-item status-action" href="#" data-status="Approved" data-bs-toggle="modal" data-bs-target="#approveModal-{{ $verify->id }}">Approve</a></li>
-                                    <li><a class="dropdown-item status-action" href="#" data-status="Rejected" data-bs-toggle="modal" data-bs-target="#rejectModal-{{ $verify->id }}">Reject</a></li>
+                                    <li><a class="dropdown-item status-action" href="#"
+                                            data-status="Approved"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#approveModal-{{ $verify->id }}">Approve</a></li>
+                                    <li><a class="dropdown-item status-action" href="#"
+                                            data-status="Rejected"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#rejectModal-{{ $verify->id }}">Reject</a></li>
+
                                     @elseif ($verify->status === 'Diterima')
+                                    <!-- On Progress Button -->
                                     <li>
                                         <a class="dropdown-item status-action" href="#"
                                             data-status="On Progress"
@@ -185,6 +181,7 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#statusChangeModal">On Progress</a>
                                     </li>
+                                    <!-- Batal Button -->
                                     <li>
                                         <a class="dropdown-item status-action" href="#"
                                             data-status="Batal"
@@ -192,7 +189,9 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#statusChangeModal">Batal</a>
                                     </li>
+
                                     @elseif ($verify->status === 'On Progress')
+                                    <!-- Selesai Button -->
                                     <li>
                                         <a class="dropdown-item status-action" href="#"
                                             data-status="Selesai"
@@ -200,6 +199,7 @@
                                             data-bs-toggle="modal"
                                             data-bs-target="#finishModal-{{ $verify->id }}">Selesai</a>
                                     </li>
+                                    <!-- Batal Button -->
                                     <li>
                                         <a class="dropdown-item status-action" href="#"
                                             data-status="Batal"
@@ -375,6 +375,3 @@
             });
         });
     </script>
-</body>
-
-</html>
