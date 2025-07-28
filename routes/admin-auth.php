@@ -23,20 +23,15 @@ use App\Http\Controllers\InstagramEmbedController;
 // ADMIN GUEST ROUTES - Registration & Login
 // ====================================================================
 Route::prefix('admin')->middleware('guest:admin')->group(function () {
-
+    
     // Registration
     Route::get('register', [RegisteredUserController::class, 'create'])->name('admin.register');
     Route::post('register', [RegisteredUserController::class, 'store']);
-
+    
     // Login
     Route::get('login', [LoginController::class, 'create'])->name('admin.login');
     Route::post('login', [LoginController::class, 'store']);
-
-    // Password Reset Routes (Currently Disabled)
-    Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
-    Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
-    Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
-    Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.store');
+    
 });
 
 // ====================================================================
@@ -111,6 +106,26 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     // ================================================================
     Route::post('logout', [LoginController::class, 'destroy'])
         ->name('admin.logout');
+
+
+        // Route untuk riwayat
+    Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
+    
+    // Routes untuk invoice management
+    Route::post('/riwayat/{id}/upload-invoice', [RiwayatController::class, 'uploadInvoice'])
+        ->name('riwayat.upload.invoice');
+    
+    Route::delete('/riwayat/{id}/delete-invoice', [RiwayatController::class, 'deleteInvoice'])
+        ->name('riwayat.delete.invoice');
+    
+    // Route untuk update admin notes
+    Route::put('/history/{id}/update-notes', [RiwayatController::class, 'updateAdminNotes'])
+        ->name('history.update.notes');
+    
+    // Route untuk download invoice (admin view)
+    Route::get('/riwayat/{id}/download-invoice', [RiwayatController::class, 'downloadInvoiceAdmin'])
+        ->name('riwayat.download.invoice');
+
 });
 
 // ====================================================================

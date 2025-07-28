@@ -30,7 +30,6 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);
-        
     }
 
     /**
@@ -51,5 +50,21 @@ class AuthenticatedSessionController extends Controller
         }
         // return RouteServiceProvider::HOME;
     }
-    
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            // Misal generate token manual, atau kembalikan data user
+            // Kalau pakai Laravel Sanctum/Passport, generate token di sini
+
+            return response()->json([
+                'access_token' => 'dummy_token_123456', // ganti dengan token asli kalau ada
+                'user' => $user,
+            ]);
+        }
+
+        return response()->json(['message' => 'Unauthorized'], 401);
+    }
 }
